@@ -23,5 +23,13 @@ class GoedeDoelTest {
 	void nieuwGDgeenOpbrengst(){
 		assertThat(doel.getOpgebracht()).isZero();
 	}
+	@Test
+	void doelenMetZelfdeNaam(){
+		assertThat(doel).isEqualTo(new GoedeDoel(NAAM));
+	}
+	@Test
+	void doelenMetVerschillendeNaam(){
+		assertThat(doel).isNotEqualTo(new GoedeDoel("WWF"));
+	}
 
 }
